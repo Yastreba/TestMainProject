@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 
 public class BaseUITest {
-
     String login = "1303";
     String password = "Guru99";
     WebElement emptyPass;

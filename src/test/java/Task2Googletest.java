@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.BeforeMethod;
@@ -16,13 +17,14 @@ public class Task2Googletest extends BaseUITest {
     public void googleTest() {
         driver.findElement(By.name("q")).sendKeys("iphone kyiv buy" + Keys.ENTER);
         for (int i = 1; i < 6; i++) {
-            if (driver.findElements(By.xpath("//cite[text()='stylus.ua']")).size() != 0) {
+            if (driver.findElements(By.xpath("//cite[text()='stylus453.ua']")).size() != 0) {
                 System.out.println("STYLUS.UA found on " + i + " page");
                 break;
             } else if (i != 5) {
                 driver.findElement(By.id("pnnext")).click();
             } else {
                 System.out.println("STYLUS.UA not found on first 5 pages");
+                Assert.assertTrue("STYLUS.UA not found on first 5 pages", false); //не знал какой из варинатов вывода правельный и добавил оба
             }
         }
     }
