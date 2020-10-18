@@ -1,3 +1,6 @@
+package HW21;
+
+import HW21.BaseUITest;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -17,7 +20,7 @@ public class Task2Googletest extends BaseUITest {
     public void googleTest() {
         driver.findElement(By.name("q")).sendKeys("iphone kyiv buy" + Keys.ENTER);
         for (int i = 1; i < 6; i++) {
-            if (driver.findElements(By.xpath("//cite[text()='stylus453.ua']")).size() != 0) {
+            if (driver.findElements(By.xpath("//cite[text()='icases.ua']")).size() != 0) {
                 System.out.println("STYLUS.UA found on " + i + " page");
                 break;
             } else if (i != 5) {

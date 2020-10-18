@@ -1,5 +1,6 @@
+package HW21;
 
-
+import HW21.BaseUITest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
