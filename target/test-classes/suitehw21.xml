@@ -3,8 +3,8 @@
 <suite name="Smoke suite">
     <test name="Main test">
         <classes>
-            <class name="Task1LoginPageTest"/>
-            <class name="Task2Googletest"/>
+            <class name="HW21.Task1LoginPageTest"/>
+            <class name="HW21.Task2Googletest"/>
         </classes>
     </test>
 </suite>
