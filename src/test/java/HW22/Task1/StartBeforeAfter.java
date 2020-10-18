@@ -62,8 +62,8 @@ public class StartBeforeAfter {
         }
     }
 
-        @AfterClass
-        public void closeDriver() {
-            driver.quit();
-        }
+//        @AfterClass
+//        public void closeDriver() {
+//            driver.quit();
+//        }
     }
