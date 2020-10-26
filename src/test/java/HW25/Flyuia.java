@@ -28,13 +28,12 @@ public class Flyuia {
         $("i[class='obe-sw-icon-navigate_next']").click();
         $x("//button[contains (text(), '19')]").click();
         $x("//div[@id='start-screen']//span[@class='obe-sw-icon-calendar-arrivals']").click();
-        //$("i[class='obe-sw-icon-navigate_next']").click();
         $x("//button[contains (text(), '21')]").click();
         $("span[class='obe-sw-icon-passenger']").click();
         $$("button[class='set-val-btn fx-row__center__center fx-flex-15']").get(1).click();
         $("[id='SEARCH_WIDGET_FORM_BUTTONS_SEARCH_FLIGHTS']").click();
 
-       // switchTo().window(1);
+        switchTo().window(1);
 
         $("[class='btn-primary']").click();
         $("i[class='icon-close']").click();

@@ -30,7 +30,6 @@ public class Ryanair {
 
             $$x("//div[@class='header']").shouldHaveSize(2);
 
-
             $$("[class*='date-item__date b2']").get(0).shouldHave(Condition.text(" 21Nov "));
             $$("[class*='date-item__date b2']").get(1).shouldHave(Condition.text(" 24Nov "));
 
