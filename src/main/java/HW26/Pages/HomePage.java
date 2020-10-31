@@ -4,7 +4,7 @@ import HW26.Fragments.SearchFragment;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
 
 
     SearchFragment searchFragment = new SearchFragment();
@@ -16,7 +16,7 @@ public class HomePage extends BasePage{
     }
 
     public HomePage clickLinkInMenu(String linkText) {
-        $x("//a[@href='/smartfony/']//..//span[contains(text(), '"+ linkText +"')]").click();
+        $x("//a[@href='/smartfony/']//..//span[contains(text(), '" + linkText + "')]").click();
         return this;
     }
 
@@ -26,20 +26,18 @@ public class HomePage extends BasePage{
     }
 
     public HomePage clickLinkInMenuNoteBooks(String linkText) {
-        $("a[title='"+linkText+"']").click();
+        $("a[title='" + linkText + "']").click();
         return this;
     }
-
-
-
 
 
     public HomePage waitForPageToLoad() {
         super.waitForPageToLoad();
         return this;
     }
+
     public HomePage closePopUp() {
-      super.closePopUp();
+        super.closePopUp();
         return this;
     }
 

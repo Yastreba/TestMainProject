@@ -5,8 +5,6 @@ import HW26.Fragments.BasketFragment;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-import java.util.Dictionary;
-
 import static com.codeborne.selenide.Selenide.*;
 
 public class ComparePage {
@@ -32,7 +30,7 @@ public class ComparePage {
     }
 
     public ElementsCollection getProductPriceCompare() {
-    return compareProductsPrices;
+        return compareProductsPrices;
 
     }
 
@@ -41,7 +39,7 @@ public class ComparePage {
     }
 
     public ComparePage addProductClick() {
-      addBtn.click();
-      return this;
+        addBtn.click();
+        return this;
     }
 }

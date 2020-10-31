@@ -1,11 +1,8 @@
 package HW26.Pages;
 
 import HW26.Fragments.FilterFragment;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import net.bytebuddy.implementation.bytecode.Throw;
-
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;

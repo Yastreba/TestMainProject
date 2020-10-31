@@ -32,7 +32,7 @@ public class BasketFragment {
     }
 
     public void closeBasketBtnClick() {
-      closeBasketBtn.shouldBe(Condition.visible).click();
+        closeBasketBtn.shouldBe(Condition.visible).click();
     }
 
     public void headerBasketBtnClick() {

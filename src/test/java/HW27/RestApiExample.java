@@ -53,7 +53,7 @@ public class RestApiExample {
 
     @Test
     public void getEmployeeByIdTest() {
-        Employee expextedEmployee = new Employee("Tiger Nixon", 32080, 61, "" );
+        Employee expextedEmployee = new Employee("Tiger Nixon", 32080, 61, "");
         EmployeeResponse expectedResponse = new EmployeeResponse("success", expextedEmployee, "Successfully! Record has been fetched.");
         EmployeeResponse response = given()
                 .when()
@@ -66,9 +66,10 @@ public class RestApiExample {
         assertEquals(response, expectedResponse);
 
     }
+
     @Test
     public void getEmployeeByIdTestNegative() {
-        Employee expextedEmployee = new Employee("John Testovich", 000001, 50000, "" );
+        Employee expextedEmployee = new Employee("John Testovich", 000001, 50000, "");
         EmployeeResponse expectedResponse = new EmployeeResponse("success", expextedEmployee, "Successfully! Record has been fetched.");
         EmployeeResponse response = given()
                 .when()
@@ -83,7 +84,7 @@ public class RestApiExample {
 
     @Test
     public void postEmployeeTest() {
-        PostEmployeeModel employee = new PostEmployeeModel("test", "123",  "23");
+        PostEmployeeModel employee = new PostEmployeeModel("test", "123", "23");
         EmployeeResponse expectedResponse = new EmployeeResponse("success", new Employee(), "Successfully! Record has been fetched.");
         EmployeeResponse response = given()
                 .with()
@@ -96,9 +97,10 @@ public class RestApiExample {
                 .as(EmployeeResponse.class);
         assertEquals(response, expectedResponse);
     }
+
     @Test
     public void postEmployeeNegativeTest() {
-        PostEmployeeModel employee = new PostEmployeeModel("test", "123",  "23");
+        PostEmployeeModel employee = new PostEmployeeModel("test", "123", "23");
         EmployeeResponse expectedResponse = new EmployeeResponse("success", new Employee(), "Successfully! Record has been fetched.");
         EmployeeResponse response = given()
                 .with()
@@ -111,6 +113,7 @@ public class RestApiExample {
                 .as(EmployeeResponse.class);
         assertEquals(response, expectedResponse);
     }
+
     @Test
     public void putEmployeeTest() {
         Map<String, String> request = new HashMap<>();
@@ -127,6 +130,7 @@ public class RestApiExample {
                 .as(EmployeeResponse.class);
         assertEquals(response, expectedResponse);
     }
+
     @Test
     public void putEmployeeNegativeTest() {
         Map<String, String> request = new HashMap<>();
@@ -143,6 +147,7 @@ public class RestApiExample {
                 .as(EmployeeResponse.class);
         assertEquals(response, expectedResponse);
     }
+
     @Test
     public void deleteEmployeeIdTest() {
         Employee employee = new Employee(2);
@@ -156,6 +161,7 @@ public class RestApiExample {
                 .as(EmployeeResponse.class);
         assertEquals(response, expectedResponse);
     }
+
     @Test
     public void deleteEmployeeIdNegativeTest() {
         Employee employee = new Employee(2);

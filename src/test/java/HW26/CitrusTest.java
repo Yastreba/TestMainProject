@@ -4,14 +4,10 @@ import HW26.Pages.ComparePage;
 import HW26.Pages.HomePage;
 import HW26.Pages.ProductListPage;
 import HW26.Pages.ProductPage;
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-
-import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Selenide.*;
 
 public class CitrusTest {

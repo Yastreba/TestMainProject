@@ -10,7 +10,7 @@ public class FilterFragment {
     ElementsCollection priceFilters = $$("[class = 'el-input__inner']");
 
     public FilterFragment setMinPriceFilter(String minPrice) {
-       priceFilters.get(0).val(minPrice);
+        priceFilters.get(0).val(minPrice);
         return this;
     }
 
@@ -20,12 +20,12 @@ public class FilterFragment {
     }
 
     public FilterFragment setMemorySize(String size) {
-        $x("//a[contains(text(), '"+ size +" Гб')]"). click();
+        $x("//a[contains(text(), '" + size + " Гб')]").click();
         return this;
     }
 
     public FilterFragment setMaterial(String material) {
-        $x("//a[contains(text(),'"+ material +"')]"). click();
+        $x("//a[contains(text(),'" + material + "')]").click();
         return this;
     }
 }
