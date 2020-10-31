@@ -1,23 +1,15 @@
 package HW25;
 
-
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-
 import static com.codeborne.selenide.Selenide.*;
 
-public class WizzAir extends BaseMethods{
-//    String LogUrl = "https://wizzair.com/#/";
-
-//    @BeforeMethod
-//    public void navigateToUrl() {
-//        driver.get(LogUrl);
-//    }
+public class WizzAir {
 
     @Test
-    public void positiveTest(){
+    public void ticketeTestWizzAir(){
         Configuration.timeout = 100000;
 
         open("https://wizzair.com");
