@@ -1,6 +1,6 @@
-package HW26.Pages;
+package HW27.Pages;
 
-import HW26.Fragments.FilterFragment;
+import HW27.Fragments.FilterFragment;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
@@ -13,7 +13,8 @@ public class ProductListPage extends BasePage {
     FilterFragment filterFragment = new FilterFragment();
     SelenideElement moreItemsBtn = $("[class = 'more-items__icon']");
     ElementsCollection getPrices = $$x("//div[@class = 'base-price']/span[@class = 'price-number']");
-    ElementsCollection getNames = $$x("//div[@class = 'product-card__name']");
+    ElementsCollection getNames = $$x("//div[@class = 'title-itm']");
+    ElementsCollection getNamesForFilters = $$x("//div[@class = 'product-card__name']");
     SelenideElement compareBtn = $("[class = 'user-actions__compare tips-parent']");
     ElementsCollection productCards = $$("[class='product-card product-card--mini']");
     ElementsCollection noteBooksPrices = $$x("//div[@class = 'prices__price']/span[@class = 'price']");
@@ -112,9 +113,9 @@ public class ProductListPage extends BasePage {
     }
 
     public void checkAllNames(String name) throws Exception {
-        for (int count = 0; count < getNames.size(); count++) {
+        for (int count = 0; count < getNamesForFilters.size(); count++) {
             bb:
-            if (getNames.get(count).getText().contains(name)) {
+            if (getNamesForFilters.get(count).getText().contains(name)) {
                 break bb;
             } else {
                 throw new Exception("Test Failed");

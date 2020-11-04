@@ -1,7 +1,7 @@
-package HW26.Pages;
+package HW27.Pages;
 
-import HW26.Fragments.AddToCompareWidgetFragment;
-import HW26.Fragments.BasketFragment;
+import HW27.Fragments.AddToCompareWidgetFragment;
+import HW27.Fragments.BasketFragment;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
@@ -14,6 +14,7 @@ public class ComparePage {
     ElementsCollection compareProducts = $$("[class='title-itm']");
     ElementsCollection compareProductsPrices = $$("//div[@class='compare']//span[@class ='price-number']");
     SelenideElement addBtn = $("[class='add-icon']");
+
 
 
     public ComparePage addToBasketBtnClick(String productName) {

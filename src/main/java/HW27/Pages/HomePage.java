@@ -1,6 +1,6 @@
-package HW26.Pages;
+package HW27.Pages;
 
-import HW26.Fragments.SearchFragment;
+import HW27.Fragments.SearchFragment;
 
 import static com.codeborne.selenide.Selenide.*;
 

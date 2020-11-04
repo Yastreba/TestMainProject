@@ -4,14 +4,10 @@ import HW26.Pages.ComparePage;
 import HW26.Pages.HomePage;
 import HW26.Pages.ProductListPage;
 import HW26.Pages.ProductPage;
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-
-import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Selenide.*;
 
 public class CitrusTest {
@@ -27,11 +23,10 @@ public class CitrusTest {
     String nameZTE = "ZTE";
 
 
-
     @BeforeClass
     public void startUp() {
         Configuration.baseUrl = "https://www.citrus.ua/";
-        Configuration.startMaximized=true;
+        Configuration.startMaximized = true;
         open("");
         homePage = new HomePage();
         productListPage = new ProductListPage();
@@ -139,14 +134,12 @@ public class CitrusTest {
         productListPage.getAllNames();
         productListPage.getAllPrices();
 
-        productListPage.checkAllNames(xiaomiName);//?????????????????????????????????????????????????????????
+        productListPage.checkAllNames(samsungName);
         productListPage.checkAllPrices();
-
-
     }
 
     @Test
-    public void memmoryFilterTest() {
+    public void memmoryFilterTest() throws Exception {
         homePage.waitForPageToLoad()
                 .closePopUp()
                 .hoverMenuLine("Смартфоны")
@@ -157,13 +150,10 @@ public class CitrusTest {
         productListPage.getFilterFragment().setMemorySize("64");
         productListPage.getAllNames();
 
-        productListPage.getAllNames().contains(texts(xiaomiName));//??????????????????????????????
-
-
-        productListPage.getAllNames().filter(Condition.text("/32Gb"));
-        productListPage.getAllNames().shouldHave(texts("/64Gb"));//????????????????????????????????????
-
+       // productListPage.checkAllNames(xiaomiName);//
+        productListPage.chectMemFilter();
     }
+
     @Test
     public void materialFilterTest() throws Exception {
         homePage.waitForPageToLoad()
@@ -177,45 +167,43 @@ public class CitrusTest {
 
     }
 
-@Test
-public void comparisonTest() {
-    homePage.waitForPageToLoad()
-            .closePopUp()
-            .hoverMenuLineNoteBooks("Ноутбуки, планшеты, МФУ")
-            .clickLinkInMenuNoteBooks("Acer");
-    String firstProductPrice = productListPage.waitForPageToLoad()
-            .closePopUp()
-            .getFirsNoteBookPrice();
-    String firstProductName = productListPage.getFirsProductName();
-    String secondProductPrice = productListPage.getSecondNoteBookPrice();
-    String secondProductName = productListPage.getSecondProductName();
-    productListPage.addProductToCompressionNotebooks(firstProductName);
-    productListPage.addProductToCompressionNotebooks(secondProductName);
-    productListPage.compressionBtnClick()
-            .waitForPageToLoad()
-            .closePopUp();
+    @Test
+    public void comparisonTest() {
+        homePage.waitForPageToLoad()
+                .closePopUp()
+                .hoverMenuLineNoteBooks("Ноутбуки, планшеты, МФУ")
+                .clickLinkInMenuNoteBooks("Acer");
+        String firstProductPrice = productListPage.waitForPageToLoad()
+                .closePopUp()
+                .getFirsNoteBookPrice();
+        String firstProductName = productListPage.getFirsProductName();
+        String secondProductPrice = productListPage.getSecondNoteBookPrice();
+        String secondProductName = productListPage.getSecondProductName();
+        productListPage.addProductToCompressionNotebooks(firstProductName);
+        productListPage.addProductToCompressionNotebooks(secondProductName);
+        productListPage.compressionBtnClick()
+                .waitForPageToLoad()
+                .closePopUp();
 
-    comprePage.getProductNamesCompare().shouldHaveSize(4);
-    comprePage.getProductNamesCompare().get(1).shouldHave(Condition.text(firstProductName));
-    comprePage.getProductNamesCompare().get(2).shouldHave(Condition.text(secondProductName));
-    comprePage.getProductPriceCompare().get(3).shouldHave(Condition.text(firstProductPrice));
-    comprePage.getProductPriceCompare().get(4).shouldHave(Condition.text(secondProductPrice));
-    comprePage.addProductClick();
+        comprePage.getProductNamesCompare().shouldHaveSize(4);
+        comprePage.getProductNamesCompare().get(1).shouldHave(Condition.text(firstProductName));
+        comprePage.getProductNamesCompare().get(2).shouldHave(Condition.text(secondProductName));
+        comprePage.getProductPriceCompare().get(3).shouldHave(Condition.text(firstProductPrice));
+        comprePage.getProductPriceCompare().get(4).shouldHave(Condition.text(secondProductPrice));
+        comprePage.addProductClick();
 
-    comprePage.getAddToCompareWidgetFragment().productList().get(1).click();
-    String thirdProductName = comprePage.getAddToCompareWidgetFragment().getFirsProductName();
-    String thirdProductPrice = comprePage.getAddToCompareWidgetFragment().getFirsProductPrice();
-    comprePage.getAddToCompareWidgetFragment().clickAdd();
+        comprePage.getAddToCompareWidgetFragment().productList().get(1).click();
+        String thirdProductName = comprePage.getAddToCompareWidgetFragment().getFirsProductName();
+        String thirdProductPrice = comprePage.getAddToCompareWidgetFragment().getFirsProductPrice();
+        comprePage.getAddToCompareWidgetFragment().clickAdd();
 
-    comprePage.getProductNamesCompare().shouldHaveSize(6);
-    comprePage.getProductNamesCompare().get(1).shouldHave(Condition.text(firstProductName));
-    comprePage.getProductNamesCompare().get(2).shouldHave(Condition.text(secondProductName));
-    comprePage.getProductNamesCompare().get(3).shouldHave(Condition.text(thirdProductName));
-    comprePage.getProductPriceCompare().get(2).shouldHave(Condition.text(firstProductPrice));
-    comprePage.getProductPriceCompare().get(5).shouldHave(Condition.text(secondProductPrice));
-    comprePage.getProductPriceCompare().get(8).shouldHave(Condition.text(thirdProductPrice));
-
-
+        comprePage.getProductNamesCompare().shouldHaveSize(6);
+        comprePage.getProductNamesCompare().get(1).shouldHave(Condition.text(firstProductName));
+        comprePage.getProductNamesCompare().get(2).shouldHave(Condition.text(secondProductName));
+        comprePage.getProductNamesCompare().get(3).shouldHave(Condition.text(thirdProductName));
+        comprePage.getProductPriceCompare().get(2).shouldHave(Condition.text(firstProductPrice));
+        comprePage.getProductPriceCompare().get(5).shouldHave(Condition.text(secondProductPrice));
+        comprePage.getProductPriceCompare().get(8).shouldHave(Condition.text(thirdProductPrice));
 
 
     }

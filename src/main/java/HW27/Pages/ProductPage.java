@@ -1,6 +1,6 @@
-package HW26.Pages;
+package HW27.Pages;
 
-import HW26.Fragments.BasketFragment;
+import HW27.Fragments.BasketFragment;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
